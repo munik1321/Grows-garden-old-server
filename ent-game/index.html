@@ -290,7 +290,7 @@ function finish(){
   if($('#redo'))$('#redo').onclick=()=>start('mistakes',shuffle(wr),{title:'Ошибки'});
   $('#home2').onclick=()=>{renderHome();show('home')};
 }
-$('#quit').onclick=()=>{if(G&&(G.i>0||G.answered)&&confirm('Закончить и посмотреть итоги?'))finish();else{clearInterval(tick);renderHome();show('home')}};
+$('#quit').onclick=()=>{if(G&&(G.i>0||G.answered))finish();else{clearInterval(tick);renderHome();show('home')}};
 document.addEventListener('keydown',e=>{
   if($('#game').classList.contains('hidden')||!G)return;
   const k=e.key.toUpperCase();let j='12345'.indexOf(k);if(j<0)j='ABCDE'.indexOf(k);if(j<0)j='АВСДЕ'.indexOf(k);
